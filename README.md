@@ -1,9 +1,9 @@
-# DOCUMENTAÇÃO TÉCNICA EXECUTIVA
+# DOCUMENTAÇÃO TÉCNICA
 ## SISTEMA RAG INPI - Consulta Inteligente de Marcas
 
 ---
 
-## 1. RESUMO EXECUTIVO
+## 1. RESUMO
 
 **Objetivo**: Sistema RAG para consulta automatizada de 572 revistas INPI (11 anos de dados históricos)
 
