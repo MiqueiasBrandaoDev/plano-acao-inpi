@@ -72,151 +72,46 @@ TeamCoordinator:      Claude Sonnet 4  → Router inteligente
 
 ---
 
-## 3. ANÁLISE FINANCEIRA
+## 3. ETAPAS DE DESENVOLVIMENTO
 
-### 3.1 Custos Mensais Detalhados
+### Fase 1: Base Técnica
+- Setup Supabase + schema otimizado
+- Desenvolvimento parser XML customizado
+- Testes chunking estratégia
+- Pipeline embeddings + upload
+- Processamento das 572 revistas
+- Validação qualidade dados
 
-| Categoria | Item | Custo | Justificativa |
-|-----------|------|-------|---------------|
-| **Infraestrutura** | Digital Ocean VPS | $24 | 4GB RAM, 2 vCPU para API |
-| | Supabase Pro | $25 | PostgreSQL + pgVector + 8GB storage |
-| **APIs IA** | OpenAI Embeddings | $15 | 100k embeddings iniciais + consultas |
-| | Claude Sonnet 4 | $60 | 200 consultas complexas/mês |
-| | GPT-4o-mini | $8 | 500 análises estatísticas/mês |
-| **Operacional** | Monitoramento | $5 | Logs + métricas |
-| | Backup | $3 | Snapshots semanais |
-| **TOTAL** | | **$140/mês** | **$1.680/ano** |
+### Fase 2: Sistema Inteligente
+- Implementação agentes Agno
+- Configuração retrieval híbrido
+- Otimização prompts especializados
+- Testes qualidade respostas
+- Fine-tuning parâmetros busca
+- Validação casos de uso reais
 
-### 3.2 Investimento Inicial
-- **Desenvolvimento**: 5 semanas × $8.000 = $40.000
-- **Setup Infraestrutura**: $2.000
-- **Processamento Inicial**: $500 (embeddings 572 revistas)
-- **TOTAL INICIAL**: $42.500
+### Fase 3: Deploy e Produção
+- API FastAPI + documentação
+- Deploy Digital Ocean + monitoramento
+- Testes carga + performance
 
-### 3.3 Break-even Analysis
-- **Custo consulta manual**: $200 (8h × $25/h advogado)
-- **Custo consulta automatizada**: $8 (incluindo overhead)
-- **Economia por consulta**: $192
-- **Break-even**: 221 consultas (~7 meses)
+## 4. PRÓXIMOS PASSOS
 
----
+### Imediatos
+1. **Setup ambiente desenvolvimento**: Supabase + Digital Ocean
+2. **Aquisição APIs**: OpenAI + Anthropic créditos
+3. **Desenvolvimento parser**: XML → chunks otimizados
 
-## 4. CRONOGRAMA DE DESENVOLVIMENTO
+### Desenvolvimento Core
+1. **Processamento dados**: 572 revistas → embeddings
+2. **Setup Supabase**: Schema + índices performance
+3. **Implementação agentes**: Agno + Claude integration
 
-### Fase 1: Base Técnica (2 semanas)
-**Semana 1**:
-- ✅ Setup Supabase + schema otimizado
-- ✅ Desenvolvimento parser XML customizado
-- ✅ Testes chunking estratégia
+### Finalização
+1. **API FastAPI**: Endpoints + documentação
+2. **Deploy produção**: VPS + monitoramento
+3. **Testes finais**: Performance + validação
 
-**Semana 2**:
-- ✅ Pipeline embeddings + upload
-- ✅ Processamento das 572 revistas
-- ✅ Validação qualidade dados
-
-### Fase 2: Sistema Inteligente (2 semanas)
-**Semana 3**:
-- 🔄 Implementação agentes Agno
-- 🔄 Configuração retrieval híbrido
-- 🔄 Otimização prompts especializados
-
-**Semana 4**:
-- ⏳ Testes qualidade respostas
-- ⏳ Fine-tuning parâmetros busca
-- ⏳ Validação casos de uso reais
-
-### Fase 3: Deploy e Produção (1 semana)
-**Semana 5**:
-- ⏳ API FastAPI + documentação
-- ⏳ Deploy Digital Ocean + monitoramento
-- ⏳ Testes carga + performance
-
-**Marcos Críticos**:
-- ✅ Dados processados: Semana 2
-- 🔄 MVP funcional: Semana 4
-- ⏳ Produção: Semana 5
 
 ---
-
-## 5. ANÁLISE DE RISCOS
-
-### 5.1 Riscos Técnicos
-| Risco | Probabilidade | Impacto | Mitigação |
-|-------|---------------|---------|-----------|
-| **Qualidade parsing XML** | Alta | Alto | Validação manual 10% amostra + correções iterativas |
-| **Performance embeddings** | Média | Médio | Cache Redis + otimização índices pgVector |
-| **Agno framework bugs** | Média | Alto | Testes extensivos + fallback para LangChain |
-| **Custos IA acima estimativa** | Baixa | Médio | Monitoramento + rate limiting agressivo |
-
-### 5.2 Riscos de Negócio
-| Risco | Probabilidade | Impacto | Mitigação |
-|-------|---------------|---------|-----------|
-| **Qualidade respostas** | Média | Alto | Validação jurídica + feedback loop |
-| **Adoção baixa** | Baixa | Alto | MVP com casos de uso específicos |
-| **Mudanças regulatórias** | Baixa | Médio | Arquitetura flexível + updates rápidos |
-
----
-
-## 6. ESPECIFICAÇÕES TÉCNICAS
-
-### 6.1 Performance Esperada
-- **Latência consulta**: < 3 segundos
-- **Throughput**: 100 consultas/hora
-- **Uptime**: 99.5%
-- **Precisão busca**: >90% nomes exatos, >85% similaridades
-
-### 6.2 Capacidade e Escalabilidade
-- **Volume atual**: 100k marcas processadas
-- **Crescimento**: +10k marcas/mês (novas revistas)
-- **Usuários simultâneos**: 20
-- **Consultas/dia**: 1.000 (limite arquitetura atual)
-
-### 6.3 Segurança e Compliance
-- **Autenticação**: API keys + rate limiting
-- **Dados**: Informações públicas INPI (sem LGPD)
-- **Backup**: Snapshots diários + retenção 30 dias
-- **Logs**: Auditoria completa consultas
-
----
-
-## 7. MÉTRICAS DE SUCESSO
-
-### 7.1 KPIs Técnicos
-- ✅ Tempo processamento: 95% consultas < 3s
-- ✅ Disponibilidade: > 99% uptime
-- ✅ Precisão: > 90% casos validados manualmente
-
-### 7.2 KPIs Negócio
-- ✅ Redução tempo pesquisa: 80% (8h → 1.5h)
-- ✅ Consultas processadas: > 500/mês
-- ✅ ROI: Break-even em 7 meses
-
----
-
-## 8. PRÓXIMOS PASSOS
-
-### Imediatos (Esta Semana)
-1. **Aprovação orçamento**: $42.500 inicial + $140/mês
-2. **Setup ambiente desenvolvimento**: Supabase + Digital Ocean
-3. **Aquisição APIs**: OpenAI + Anthropic créditos
-
-### Semana 1-2
-1. **Desenvolvimento parser**: XML → chunks otimizados
-2. **Processamento dados**: 572 revistas → embeddings
-3. **Setup Supabase**: Schema + índices performance
-
-### Semana 3-5
-1. **Implementação agentes**: Agno + Claude integration
-2. **API FastAPI**: Endpoints + documentação
-3. **Deploy produção**: VPS + monitoramento
-
----
-
-**APROVAÇÃO NECESSÁRIA**: 
-- [ ] Orçamento: $42.500 + $1.680/ano
-- [ ] Cronograma: 5 semanas desenvolvimento
-- [ ] Recursos: 1 dev senior full-time
-
-**CONTATO TÉCNICO**: [Seu nome/equipe]
 **DATA**: 25/07/2025
-**VERSÃO**: 1.0
